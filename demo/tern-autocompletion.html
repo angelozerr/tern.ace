@@ -40,29 +40,30 @@
 <!-- ACE Tern -->
 <script src="../lib/tern-ace.js"></script>
 
+<script src="../lib/browser.json.js"></script>
+<script src="../lib/ecma5.json.js"></script>
+
 <script>
     // trigger extension
     var langTools = ace.require("ace/ext/language_tools");
-    var editor = ace.edit("editor");
-    editor.session.setMode("ace/mode/html");
-    editor.setTheme("ace/theme/tomorrow");
+    var editor = ace.edit("editor");    
+    editor.session.setMode("ace/mode/javascript");
     // enable autocompletion and snippets
     editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true
     });
+    editor.setValue('var arr = [];\narr.');
     
     var server = ace.require("tern/server");
-    var code = '{}';
-    server.addDef(JSON.parse(code));
-    
+    server.addDef(ternEcma5Def);
+    server.addDef(ternBrowserDef);
+
     var ternCompleter = ace.require("ace/autocomplete/tern_completer");
     ternCompleter.setServer(server);
     langTools.addCompleter(ternCompleter);
     
 </script>
-
-<script src="../lib/ecma5.json.js"></script>
 
 </body>
 </html>
