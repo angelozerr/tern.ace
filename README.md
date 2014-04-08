@@ -21,6 +21,12 @@ If you apply the completion, it will generate the signature of the selected func
 
 Use tab, to switch to next parameter.
 
+## Text Hover 
+
+If you hover known JS elements, a tooltip displays some useful information like documentation, type, url : 
+
+![Tern ACE Completion Apply](https://github.com/angelozerr/tern.ace/wiki/images/TernACE_TextHover.png)
+
 # Structure
 
 The basic structure of the project is given in the following way:
