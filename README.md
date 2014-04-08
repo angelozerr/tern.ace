@@ -5,8 +5,7 @@ tern.ace
 
 [Ace](https://github.com/ajaxorg/ace) is a standalone code editor written in JavaScript.
 
-*tern.ace* gives you the capability to use [tern.js] in a [Ace](https://github.com/ajaxorg/ace) editor like the 
-[CodeMirror Tern addon](http://ternjs.net/doc/demo.html)
+**tern.ace** gives you the capability to use [tern.js](https://github.com/marijnh/tern) in a [Ace](https://github.com/ajaxorg/ace) editor like the [CodeMirror Tern addon](http://ternjs.net/doc/demo.html)
 
 # Features
 
