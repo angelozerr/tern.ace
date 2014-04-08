@@ -51,17 +51,24 @@
     // enable autocompletion and snippets
     editor.setOptions({
         enableBasicAutocompletion: true,
-        enableSnippets: true
+        enableSnippets: false
     });
     editor.setValue('var arr = [];\narr.');
     
-    var server = ace.require("tern/server");
+    var server = ace.require("ace/tern/server");
     server.addDef(ternEcma5Def);
     server.addDef(ternBrowserDef);
 
-    var ternCompleter = ace.require("ace/autocomplete/tern_completer");
+    // Tern Completion
+    var ternCompleter = ace.require("ace/tern/tern_completer");
     ternCompleter.setServer(server);
     langTools.addCompleter(ternCompleter);
+    
+    // Tern Tooltip
+    var TernTooltip = ace.require("ace/tern/tern_tooltip").TernTooltip;
+    editor.ternTooltip = new TernTooltip(editor, server);
+    
+    //editor.tokenTooltip = new TokenTooltip(editor);  
     
 </script>
 
