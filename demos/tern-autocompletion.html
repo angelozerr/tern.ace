@@ -23,9 +23,9 @@
 <pre id="editor"></pre>
 
 <!-- load ace -->
-<script src="scripts/ace-builds/src-noconflict/ace.js"></script>
+<script src="scripts/ace-builds/src-min/ace.js"></script>
 <!-- load ace language tools -->
-<script src="scripts/ace-builds/src-noconflict/ext-language_tools.js"></script>
+<script src="scripts/ace-builds/src-min/ext-language_tools.js"></script>
 
 <!-- Tern JS -->
 <script src="scripts/ternjs/acorn/acorn.js"></script>
@@ -54,19 +54,18 @@
         enableSnippets: false
     });
     editor.setValue('var arr = [];\narr.');
-    
-    var server = ace.require("ace/tern/server");
-    server.addDef(ternEcma5Def);
-    server.addDef(ternBrowserDef);
 
-    // Tern Completion
-    var ternCompleter = ace.require("ace/tern/tern_completer");
-    ternCompleter.setServer(server);
-    langTools.addCompleter(ternCompleter);
-    
+   
+	var TernServer = ace.require("ace/tern/server").TernServer;
+	var defs = [ternEcma5Def];
+	var ternServer = new TernServer({defs: defs});
+        
+	// Tern Completion
+    langTools.addCompleter(ternServer);
+
     // Tern Tooltip
-    var TernTooltip = ace.require("ace/tern/tern_tooltip").TernTooltip;
-    editor.ternTooltip = new TernTooltip(editor, server);
+    //var TernTooltip = ace.require("ace/tern/tern_tooltip").TernTooltip;
+    //editor.ternTooltip = new TernTooltip(editor, server);
     
     //editor.tokenTooltip = new TokenTooltip(editor);  
     
