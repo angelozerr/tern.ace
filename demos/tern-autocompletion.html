@@ -53,21 +53,19 @@
         enableBasicAutocompletion: true,
         enableSnippets: false
     });
-    editor.setValue('var arr = [];\narr.');
-
-   
+	editor.setValue('var arr = [];\narr.');
+    
+	// Create tern server
 	var TernServer = ace.require("ace/tern/server").TernServer;
 	var defs = [ternEcma5Def];
 	var ternServer = new TernServer({defs: defs});
         
 	// Tern Completion
-    langTools.addCompleter(ternServer);
+	langTools.addCompleter(ternServer);
 
-    // Tern Tooltip
-    //var TernTooltip = ace.require("ace/tern/tern_tooltip").TernTooltip;
-    //editor.ternTooltip = new TernTooltip(editor, server);
-    
-    //editor.tokenTooltip = new TokenTooltip(editor);  
+	// Tern Tooltip
+	var TernTooltip = ace.require("ace/tern/tern_tooltip").TernTooltip;
+	editor.ternTooltip = new TernTooltip(editor, ternServer);
     
 </script>
 
