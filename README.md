@@ -33,4 +33,8 @@ The basic structure of the project is given in the following way:
 
 * `demos/` demos with Tern and ACE. Open tern-autocompletion.html.
 * `lib/` contains `tern-ace.js` which is the glue between Tern and ACE.
+* 
+# Similar project
+
+https://github.com/sevin7676/Ace.Tern
 
