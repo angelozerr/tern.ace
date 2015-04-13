@@ -1,6 +1,8 @@
 tern.ace
 ========
 
+This project was just a POC. Please use this tern ace project https://github.com/sevin7676/Ace.Tern
+
 [tern.js](https://github.com/marijnh/tern) is a stand-alone code-analysis engine for JavaScript written in Javascript.
 
 [Ace](https://github.com/ajaxorg/ace) is a standalone code editor written in JavaScript.
